@@ -27,7 +27,7 @@ app.use('/api/student',require('./routes/Studentroutes'))
 
 
 
-const PORT = process.env.PORT || 8000;  // Set a fallback port
+const PORT = process.env.PORT || 7000;  // Set a fallback port
 app.listen(PORT, () => {
   console.log(`Server running on port: ${PORT}`);
 });

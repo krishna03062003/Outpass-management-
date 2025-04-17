@@ -15,14 +15,14 @@ const authenticate = async (req, res, next) => {
 
     const student = await studentmodel.findById(decoded.id);
     if (!student) {
-      console.log("❌ No student found with ID:", decoded.id);
+      console.log(" No student found with ID:", decoded.id);
       return res.status(401).json({ message: "Unauthorized: Invalid token" });
     }
 
     req.student = student; // Attach the student to the request
     next();
   } catch (err) {
-    console.error("❌ Token verification failed:", err.message);
+    console.error(" Token verification failed:", err.message);
     return res.status(401).json({ message: "Unauthorized: Token invalid", error: err.message });
   }
 };
